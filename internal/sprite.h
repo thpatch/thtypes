@@ -35,9 +35,27 @@ typedef struct {
 	/* Absolute dimensions of the sprite */
 	float abs_h;
 	float abs_w;
+} sprite_spec_base_t;
 
-	/* How many sprites were registered before this one? */
+/* TH06 variant of the sprite coordinate structure. */
+typedef struct {
+	sprite_spec_base_t base;
+
 	uint32_t register_order;
 } sprite_spec06_t;
+
+/* TH07 variant of the sprite coordinate structure. */
+typedef struct {
+	sprite_spec_base_t base;
+
+	/* Factor that the Direct3D texture was scaled by in order to meet */
+	/* hardware texture size requirements. ZUN's attempt to at least keep */
+	/* the game running (but blurry) on 3dfx Voodoo cards despite using */
+	/* textures larger than 256x256 pixels otherwise. */
+	float hw_texture_scale_w;
+	float hw_texture_scale_h;
+
+	uint32_t register_order;
+} sprite_spec07_t;
 
 #pragma pack(pop)
