@@ -4,10 +4,7 @@
   */
 
 #pragma once
-
-#include <stdint.h>
-
-#pragma pack(push, 1)
+#include "pragma_push.h"
 
 #ifndef _WAVEFORMATEX_
 #define _WAVEFORMATEX_
@@ -47,4 +44,4 @@ typedef struct {
 	uint16_t pad;
 } bgm_fmt_t;
 
-#pragma pack(pop)
+#include "pragma_pop.h"

@@ -4,8 +4,7 @@
   */
 
 #pragma once
-
-#include <stdint.h>
+#include "pragma_push.h"
 
 /* All of the 16-bit formats are little-endian. */
 typedef enum {
@@ -14,8 +13,6 @@ typedef enum {
 	FORMAT_ARGB4444 = 5, /* 0xGB 0xAR */
 	FORMAT_GRAY8 = 7
 } format_t;
-
-#pragma pack(push, 1)
 
 typedef struct {
 	uint32_t id;
@@ -104,4 +101,4 @@ typedef struct {
 	unsigned char data[];
 } thtx_header_t;
 
-#pragma pack(pop)
+#include "pragma_pop.h"

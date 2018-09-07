@@ -4,10 +4,7 @@
   */
 
 #pragma once
-
-#include <stdint.h>
-
-#pragma pack(push, 1)
+#include "../pragma_push.h"
 
 struct rect_t {
 	float left;
@@ -58,4 +55,4 @@ typedef struct {
 	uint32_t register_order;
 } sprite_spec07_t;
 
-#pragma pack(pop)
+#include "../pragma_pop.h"
