@@ -4,6 +4,7 @@
   */
 
 #pragma once
+#include "warning_push.h"
 #include "pragma_push.h"
 
 #ifndef _WAVEFORMATEX_
@@ -45,3 +46,4 @@ typedef struct {
 } bgm_fmt_t;
 
 #include "pragma_pop.h"
+#include "warning_pop.h"

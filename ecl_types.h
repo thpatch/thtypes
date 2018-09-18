@@ -4,6 +4,7 @@
   */
 
 #pragma once
+#include "warning_push.h"
 #include "pragma_push.h"
 
 typedef struct {
@@ -55,3 +56,4 @@ typedef struct {
 } ecl08_t; //this ECL format is just ecl07_t with a magic number on it
 
 #include "pragma_pop.h"
+#include "warning_pop.h"

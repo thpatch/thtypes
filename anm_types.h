@@ -4,6 +4,7 @@
   */
 
 #pragma once
+#include "warning_push.h"
 #include "pragma_push.h"
 
 /* All of the 16-bit formats are little-endian. */
@@ -102,3 +103,4 @@ typedef struct {
 } thtx_header_t;
 
 #include "pragma_pop.h"
+#include "warning_pop.h"

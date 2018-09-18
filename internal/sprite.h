@@ -4,6 +4,7 @@
   */
 
 #pragma once
+#include "../warning_push.h"
 #include "../pragma_push.h"
 
 struct rect_t {
@@ -56,3 +57,4 @@ typedef struct {
 } sprite_spec07_t;
 
 #include "../pragma_pop.h"
+#include "../warning_pop.h"
