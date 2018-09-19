@@ -46,7 +46,8 @@ typedef struct {
 typedef struct {
 	uint32_t sprites;
 	uint32_t scripts;
-	uint32_t zero1;
+	/* Set to the texture slot at runtime, zero in the files itself. */
+	uint32_t rt_textureslot;
 	uint32_t w, h;
 	uint32_t format;
 	uint32_t zero2; /* XXX: A few are 0xff000000. */
@@ -79,6 +80,7 @@ typedef struct {
 	uint32_t version;
 	uint16_t sprites;
 	uint16_t scripts;
+	/* Actually zero. */
 	uint16_t zero1;
 	uint16_t w, h;
 	uint16_t format;
