@@ -50,7 +50,8 @@ typedef struct {
 	uint32_t rt_textureslot;
 	uint32_t w, h;
 	uint32_t format;
-	uint32_t zero2; /* XXX: A few are 0xff000000. */
+	/* ARGB. Mostly zero, but a few are 0xff000000 (opaque black). */
+	uint32_t colorkey;
 	uint32_t nameoffset;
 	/* XXX: X is unused here. */
 	/* XXX: Y stores the secondary name offset for TH06.
