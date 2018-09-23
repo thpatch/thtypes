@@ -69,6 +69,8 @@ typedef struct {
 	/* 11 - Used mainly for backgrounds and ascii.png. */
 	uint32_t unknown1;
 	uint32_t thtxoffset;
+	/* Can also be communicated by setting the first char of the file name to
+	 * '@'. In TH06, this is the only way, that game doesn't use this field. */
 	uint16_t hasdata;
 	/* TH14 starts using what was previously thought */
 	/* to be the upper 2 bytes of hasdata for something else. */
