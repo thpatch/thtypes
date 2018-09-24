@@ -63,11 +63,13 @@ typedef struct {
 	 * 4: TH95, TH10
 	 * 7: TH11, TH12, TH125 */
 	uint32_t version;
-	/* 0  - Random things, everything in TH06. */
+	/* Memory priority for Direct3D textures created for this entry. */
+	/* Supported from TH07 up until alcostg. */
+	/* 0  - Random things, everything in TH06 where priority is unsupported */
 	/* 1  - data/ascii/loading.png for TH08 and TH09. */
 	/* 10 - Mostly sprites? */
 	/* 11 - Used mainly for backgrounds and ascii.png. */
-	uint32_t unknown1;
+	uint32_t memorypriority;
 	uint32_t thtxoffset;
 	/* Can also be communicated by setting the first char of the file name to
 	 * '@'. In TH06, this is the only way, that game doesn't use this field. */
@@ -89,7 +91,9 @@ typedef struct {
 	uint16_t format;
 	uint32_t nameoffset;
 	uint16_t x, y;
-	uint32_t unknown1;
+	/* As of TH16.5, unused in every game that uses this stucture, but still
+	 * present in the files. */
+	uint32_t memorypriority;
 	uint32_t thtxoffset;
 	uint16_t hasdata;
 	uint16_t unknown2;
