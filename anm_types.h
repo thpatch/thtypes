@@ -60,8 +60,9 @@ typedef struct {
 	/* 0: TH06
 	 * 2: TH07
 	 * 3: TH08, TH09
-	 * 4: TH95, TH10
-	 * 7: TH11, TH12, TH125 */
+	 * 4: TH09.5, TH10
+	 * 7: TH11, TH12, TH12.5
+	 * 8: TH13+ */
 	uint32_t version;
 	/* Memory priority for Direct3D textures created for this entry. */
 	/* Supported from TH07 up until alcostg. */
@@ -74,9 +75,11 @@ typedef struct {
 	/* Can also be communicated by setting the first char of the file name to
 	 * '@'. In TH06, this is the only way, that game doesn't use this field. */
 	uint16_t hasdata;
-	/* TH14 starts using what was previously thought */
-	/* to be the upper 2 bytes of hasdata for something else. */
-	uint16_t unknown2;
+	/* From TH14 on, used to mark images as "needing to be scaled down when
+	 * running in lower resolutions". Which is something different than
+	 * "high-res" since images with separate versions for each resolution
+	 * (most notably ascii*.png) have 0 rather than 1 here. */
+	uint16_t lowresscale;
 	uint32_t nextoffset;
 	uint32_t zero3;
 } anm_header06_t;
@@ -96,7 +99,7 @@ typedef struct {
 	uint32_t memorypriority;
 	uint32_t thtxoffset;
 	uint16_t hasdata;
-	uint16_t unknown2;
+	uint16_t lowresscale;
 	uint32_t nextoffset;
 	uint32_t zero2[6];
 } anm_header11_t;
