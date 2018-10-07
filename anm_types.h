@@ -21,7 +21,7 @@ typedef struct {
 } sprite_t;
 
 typedef struct {
-	uint16_t time;
+	int16_t time;
 	uint8_t type;
 	/* XXX: data length. */
 	uint8_t length;
@@ -31,7 +31,7 @@ typedef struct {
 typedef struct {
 	uint16_t type;
 	uint16_t length;
-	uint16_t time;
+	int16_t time;
 	/* TODO: Implement this, it works similarly to that one in ECL files. */
 	uint16_t param_mask;
 	unsigned char data[];
