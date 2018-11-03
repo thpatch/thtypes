@@ -36,7 +36,7 @@ typedef struct {
 
 /* Single track in thbgm.fmt, used from TH07 on. Values are in bytes. */
 typedef struct {
-	const char fn[16]; // fn[0] == '\0' indicates the end of the array
+	char fn[16]; // fn[0] == '\0' indicates the end of the array
 	uint32_t track_offset;
 	uint32_t unknown;
 	uint32_t intro_size;
