@@ -39,8 +39,9 @@ typedef struct {
 	char fn[16]; // fn[0] == '\0' indicates the end of the array
 	uint32_t track_offset;
 	uint32_t unknown;
-	uint32_t intro_size;
-	uint32_t track_size;
+	/* Yes, signed. */
+	int32_t intro_size;
+	int32_t track_size;
 	WAVEFORMATEX wfx;
 	uint16_t pad;
 } bgm_fmt_t;
