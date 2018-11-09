@@ -38,7 +38,13 @@ typedef struct {
 typedef struct {
 	char fn[16]; // fn[0] == '\0' indicates the end of the array
 	uint32_t track_offset;
-	uint32_t unknown;
+	/* Amount of memory to allocate for the track if the BGM preloading option
+	 * is set in custom.exe. In the original files, this value is always way
+	 * larger than [track_size], for whatever reason - especially since the
+	 * game sets the corresponding internal structure member to [track_size]
+	 * before playback anyway.
+	 * Only used in TH07-TH09.5. */
+	uint32_t preload_size;
 	/* Yes, signed. */
 	int32_t intro_size;
 	int32_t track_size;
