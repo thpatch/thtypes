@@ -101,7 +101,9 @@ typedef struct {
 	uint16_t hasdata;
 	uint16_t lowresscale;
 	uint32_t nextoffset;
-	uint32_t zero2[6];
+	/* Introduced in TH19 because..... */
+	uint16_t thtx_width, thtx_height;
+	uint32_t zero2[5];
 } anm_header11_t;
 
 typedef struct {
