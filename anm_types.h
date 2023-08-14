@@ -101,8 +101,10 @@ typedef struct {
 	uint16_t hasdata;
 	uint16_t lowresscale;
 	uint32_t nextoffset;
-	/* Introduced in TH19 because..... */
-	uint16_t thtx_width, thtx_height;
+	/* The maximum values that w and h are allowed to have, if hasdata is 0
+         * and the image filename specified is not '@'
+	 * Introduced in TH19 v1.00a because... */
+	uint16_t w_max, h_max;
 	uint32_t zero2[5];
 } anm_header11_t;
 
