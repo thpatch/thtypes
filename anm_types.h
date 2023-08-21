@@ -21,6 +21,13 @@ typedef struct {
 } sprite_t;
 
 typedef struct {
+    uint32_t id;
+    float x, y, w, h;
+    /* TH19: new fields, usually {0, 0, 1, 1, 0} */
+    float unk0, unk1, unk2, unk3, unk4;
+} sprite19_t;
+
+typedef struct {
 	int16_t time;
 	uint8_t type;
 	/* XXX: data length. */
@@ -79,9 +86,10 @@ typedef struct {
 	 * running in lower resolutions". Which is something different than
 	 * "high-res" since images with separate versions for each resolution
 	 * (most notably ascii*.png) have 0 rather than 1 here. */
-	uint16_t lowresscale;
+	uint8_t lowresscale;
+	uint8_t th19_unk; /* TH19 */
 	uint32_t nextoffset;
-	uint32_t zero3;
+	uint16_t w_max, h_max; /* TH19 */
 } anm_header06_t;
 
 typedef struct {
@@ -99,7 +107,8 @@ typedef struct {
 	uint32_t memorypriority;
 	uint32_t thtxoffset;
 	uint16_t hasdata;
-	uint16_t lowresscale;
+	uint8_t lowresscale;
+	uint8_t th19_unk; /* TH19 */
 	uint32_t nextoffset;
 	/* The maximum values that w and h are allowed to have, if hasdata is 0
          * and the image filename specified is not '@'
