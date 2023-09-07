@@ -87,7 +87,7 @@ typedef struct {
 	 * "high-res" since images with separate versions for each resolution
 	 * (most notably ascii*.png) have 0 rather than 1 here. */
 	uint8_t lowresscale;
-	uint8_t th19_unk; /* TH19 */
+	uint8_t jpeg_quality; /* TH19 */
 	uint32_t nextoffset;
 	uint16_t w_max, h_max; /* TH19 */
 } anm_header06_t;
@@ -108,7 +108,7 @@ typedef struct {
 	uint32_t thtxoffset;
 	uint16_t hasdata;
 	uint8_t lowresscale;
-	uint8_t th19_unk; /* TH19 */
+	uint8_t jpeg_quality; /* TH19 */
 	uint32_t nextoffset;
 	/* The maximum values that w and h are allowed to have, if hasdata is 0
          * and the image filename specified is not '@'
